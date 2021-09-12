@@ -122,10 +122,10 @@
                     class="icon icon-angle-left s-18 pull-right"></i>
             </a>
                 <ul class="treeview-menu">
-                    <!-- <li><a href="index.html"><i class="icon icon-folder5"></i>Panel Dashboard 1</a>
+                    <li><a href="<?= base_url('Verification/recaps'); ?>"><i class="icon icon-folder5"></i>Rekap</a>
                     </li>
-                    <li><a href="panel-page-dashboard1-rtl.html"><i class="icon icon-folder5"></i>Panel Dashboard 1 - RTL</a>
-                    </li> -->
+                    <li><a href="<?= base_url(); ?>"><i class="icon icon-folder5"></i>Form Pengisian</a>
+                    </li>
                 </ul>
             </li>
             

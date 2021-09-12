@@ -43,4 +43,19 @@ class Employee extends CI_Model
         return $query->num_rows();
     }
 
+    public function findTotalRows()
+    {
+        $query = $this->db->query('SELECT * FROM inventarisir');
+
+        return $query->num_rows();
+    }
+
+    public function findAll($limit, $start)
+    {
+        $this->db->limit($limit, $start);
+        $data = $this->db->get('inventarisir')->result();
+
+        return $data;
+    }
+
 }

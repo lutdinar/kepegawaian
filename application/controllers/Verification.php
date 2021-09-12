@@ -164,11 +164,28 @@ class Verification extends MY_Controller
 
     }
 
-    public function cekData()
+    public function recaps()
     {
-        $total = $this->Employee->totalOfDone();
+        $limit = 10;
+        $this->load->library('pagination');
+		$config['base_url'] = base_url('Verification/recaps');
 
-        echo $total;
+        $config['total_rows'] = $this->Employee->findTotalRows();
+		$config['per_page'] = $limit;
+		$this->pagination->initialize($config);
+
+        $start = $this->uri->segment(3, 0);
+
+        $data['employees']  = $this->Employee->findAll($limit, $start);
+
+        foreach ($data['employees'] as $emp) {
+            $emp->percent = number_format($emp->progress / 12 * 100, 2);
+        }
+        $data['title']      = 'Rekapitulasi';
+
+        $this->render_views('content/dashboard', $data);
+        // echo json_encode($data);
+        echo $start;
     }
 
 }
