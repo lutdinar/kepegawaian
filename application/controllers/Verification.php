@@ -185,7 +185,16 @@ class Verification extends MY_Controller
 
         $this->render_views('content/dashboard', $data);
         // echo json_encode($data);
-        echo $start;
+    }
+
+    public function findDetail()
+    {
+        $id = $this->input->get('emp');
+
+        $emp = $this->Employee->findById($id);
+        $emp->percent = number_format($emp->progress / 12 * 100, 2);
+
+        echo json_encode($emp);
     }
 
 }

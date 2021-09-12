@@ -52,8 +52,16 @@ class Employee extends CI_Model
 
     public function findAll($limit, $start)
     {
+        $this->db->order_by('nama', 'ASC');
         $this->db->limit($limit, $start);
         $data = $this->db->get('inventarisir')->result();
+
+        return $data;
+    }
+
+    public function findById($id)
+    {
+        $data = $this->db->get_where('inventarisir', array('id' => $id))->row();
 
         return $data;
     }

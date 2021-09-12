@@ -2,11 +2,12 @@
 
 // require_once dirname(dirname(__FILE__)) . '../libraries/Requests.php';
 include(dirname(dirname(__FILE__)) . '../libraries/Requests.php');
+// include(dirname(dirname(__FILE__)) . '/libraries/Requests.php');
 
 class ApiRequest extends CI_Model
 {
-	protected $urlApi = "http://127.0.0.1/sipitung/api/";
-	// protected $urlApi = "https://api-sipitung.000webhostapp.com/api/";
+	// protected $urlApi = "http://127.0.0.1/sipitung/api/";
+	protected $urlApi = "https://sipitung.sumedangkab.go.id/api/";
 	private $is_key = "f24a23c6f3428925762c17e3bb5aff2f8b0b45215c67d47ce60828104e716ff3";
 
 	function __construct()
