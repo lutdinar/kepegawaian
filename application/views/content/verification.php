@@ -38,7 +38,7 @@
                     <div class="float-right">
                         <span class="icon icon-user s-48"></span>
                     </div>
-                    <div class="sc-counter s-36 counter-animated">192</div>
+                    <div class="sc-counter s-36 counter-animated">188</div>
                     <h6 class="counter-title">Orang Pegawai</h6>
                 </div>
             </div>

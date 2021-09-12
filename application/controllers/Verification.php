@@ -181,6 +181,21 @@ class Verification extends MY_Controller
         foreach ($data['employees'] as $emp) {
             $emp->percent = number_format($emp->progress / 12 * 100, 2);
         }
+
+        $totalDone = $this->Employee->totalOfDone();
+        if ($totalDone > 0) {
+            $data['totalDone'] = $totalDone;
+        } else {
+            $data['totalDone'] = 0;
+        }
+
+        $totalProcess = $this->Employee->totalOfProcess();
+        if ($totalProcess > 0) {
+            $data['totalProcess'] = $totalProcess;
+        } else {
+            $data['totalProcess'] = 0;
+        }
+        
         $data['title']      = 'Rekapitulasi';
 
         $this->render_views('content/dashboard', $data);

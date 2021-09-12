@@ -14,6 +14,36 @@
     </header>
 
     <div class="container-fluid relative animatedParent animateOnce">
+    <div class="row my-4 text-white no-gutters shadow">
+            <div class="col-lg-4">
+                <div class="green counter-box p-40 shadow2">
+                    <div class="float-right">
+                        <span class="icon icon-check s-48"></span>
+                    </div>
+                    <div class="sc-counter s-36 counter-animated"><?= $totalDone; ?></div>
+                    <h6 class="counter-title">Orang sudah selesai</h6>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="strawberry counter-box p-40">
+                    <div class="float-right">
+                        <span class="icon icon-cancel s-48"></span>
+                    </div>
+                    <div class="sc-counter s-36 counter-animated"><?= $totalProcess; ?></div>
+                    <h6 class="counter-title">Orang belum selesai</h6>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="light-blue counter-box p-40">
+                    <div class="float-right">
+                        <span class="icon icon-user s-48"></span>
+                    </div>
+                    <div class="sc-counter s-36 counter-animated">188</div>
+                    <h6 class="counter-title">Orang Pegawai</h6>
+                </div>
+            </div>
+        </div>
+
         <!-- <div class="paper-card"> -->
             <div class="row my-4">
                 <div class="col-md-12">
@@ -69,7 +99,7 @@
 </div>
 
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel"></h5>
@@ -90,6 +120,7 @@
                             <input id="detailUbahProfil" type="checkbox" disabled/>
                             <label for="detailUbahProfil" class="bg-success"></label>
                         </div>
+                        <p id="deskProfil"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Pangkat/Golongan
@@ -97,6 +128,7 @@
                             <input id="detailPangkat" type="checkbox" disabled/>
                             <label for="detailPangkat" class="bg-success"></label>
                         </div>
+                        <p id="deskPangkat"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Pendidikan
@@ -104,6 +136,7 @@
                             <input id="detailPendidikan" type="checkbox" disabled/>
                             <label for="detailPendidikan" class="bg-success"></label>
                         </div>
+                        <p id="deskPendidikan"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Jabatan
@@ -111,6 +144,7 @@
                             <input id="detailJabatan" type="checkbox" disabled/>
                             <label for="detailJabatan" class="bg-success"></label>
                         </div>
+                        <p id="deskJabatan"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Peninjauan Masa Kerja
@@ -118,6 +152,7 @@
                             <input id="detailMasaKerja" type="checkbox" disabled/>
                             <label for="detailMasaKerja" class="bg-success"></label>
                         </div>
+                        <p id="deskMasaKerja"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Diklat/Kursus
@@ -125,6 +160,7 @@
                             <input id="detailDiklat" type="checkbox" disabled/>
                             <label for="detailDiklat" class="bg-success"></label>
                         </div>
+                        <p id="deskDiklat"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat CPNS/PNS
@@ -132,6 +168,7 @@
                             <input id="detailCpns" type="checkbox" disabled/>
                             <label for="detailCpns" class="bg-success"></label>
                         </div>
+                        <p id="deskCpns"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Keluarga
@@ -139,6 +176,7 @@
                             <input id="detailKeluarga" type="checkbox" disabled/>
                             <label for="detailKeluarga" class="bg-success"></label>
                         </div>
+                        <p id="deskKeluarga"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat SKP
@@ -146,6 +184,7 @@
                             <input id="detailSkp" type="checkbox" disabled/>
                             <label for="detailSkp" class="bg-success"></label>
                         </div>
+                        <p id="deskSkp"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Penghargaan
@@ -153,6 +192,7 @@
                             <input id="detailPenghargaan" type="checkbox" disabled/>
                             <label for="detailPenghargaan" class="bg-success"></label>
                         </div>
+                        <p id="deskPenghargaan"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat Organisasi
@@ -160,6 +200,7 @@
                             <input id="detailOrganisasi" type="checkbox" disabled/>
                             <label for="detailOrganisasi" class="bg-success"></label>
                         </div>
+                        <p id="deskOrganisasi"></p>
                     </li>
                     <li class="list-group-item">
                         Riwayat CLTN
@@ -167,6 +208,7 @@
                             <input id="detailCltn" type="checkbox" disabled/>
                             <label for="detailCltn" class="bg-success"></label>
                         </div>
+                        <p id="deskCltn"></p>
                     </li>
                 </ul>
             
@@ -179,6 +221,19 @@
 </div>
 
 <script>
+    // $('#deskProfil').hide();
+    $('#deskPangkat').hide();
+    $('#deskPendidikan').hide();
+    $('#deskJabatan').hide();
+    $('#deskMasaKerja').hide();
+    $('#deskDiklat').hide();
+    $('#deskCpns').hide();
+    $('#deskKeluarga').hide();
+    $('#deskSkp').hide();
+    $('#deskPenghargaan').hide();
+    $('#deskOrganisasi').hide();
+    $('#deskCltn').hide();
+
     $('.btn-detail').click(function () {
         var data = this.id;
 
@@ -202,6 +257,32 @@
             document.getElementById('detailPenghargaan').checked = (dao.penghargaan == "Y") ? true : false;
             document.getElementById('detailOrganisasi').checked = (dao.organisasi == "Y") ? true : false;
             document.getElementById('detailCltn').checked = (dao.cltn == "Y") ? true : false;
+
+            document.getElementById('deskProfil').innerHTML = dao.deskripsi_ubah_profil;
+            document.getElementById('deskPangkat').innerHTML = dao.deskripsi_pangkat_golongan;
+            document.getElementById('deskPendidikan').innerHTML = dao.deskripsi_pendidikan;
+            document.getElementById('deskJabatan').innerHTML = dao.deskripsi_jabatan;
+            document.getElementById('deskMasaKerja').innerHTML = dao.deskripsi_peninjauan_masa_kerja;
+            document.getElementById('deskDiklat').innerHTML = dao.deskripsi_diklat_kursus;
+            document.getElementById('deskCpns').innerHTML = dao.deskripsi_cpns_pns;
+            document.getElementById('deskKeluarga').innerHTML = dao.deskripsi_keluarga;
+            document.getElementById('deskSkp').innerHTML = dao.deskripsi_skp;
+            document.getElementById('deskPenghargaan').innerHTML = dao.deskripsi_penghargaan;
+            document.getElementById('deskOrganisasi').innerHTML = dao.deskripsi_organisasi;
+            document.getElementById('deskCltn').innerHTML = dao.deskripsi_cltn;
+
+            (!document.getElementById('detailUbahProfil').checked) ? $('#deskProfil').show() : $('#deskProfil').hide();
+            (!document.getElementById('detailPangkat').checked) ? $('#deskPangkat').show() : $('#deskPangkat').hide();
+            (!document.getElementById('detailPendidikan').checked) ? $('#deskPendidikan').show() : $('#deskPendidikan').hide();
+            (!document.getElementById('detailJabatan').checked) ? $('#deskJabatan').show() : $('#deskJabatan').hide();
+            (!document.getElementById('detailMasaKerja').checked) ? $('#deskMasaKerja').show() : $('#deskMasaKerja').hide();
+            (!document.getElementById('detailDiklat').checked) ? $('#deskDiklat').show() : $('#deskDiklat').hide();
+            (!document.getElementById('detailCpns').checked) ? $('#deskCpns').show() : $('#deskCpns').hide();
+            (!document.getElementById('detailKeluarga').checked) ? $('#deskKeluarga').show() : $('#deskKeluarga').hide();
+            (!document.getElementById('detailSkp').checked) ? $('#deskSkp').show() : $('#deskSkp').hide();
+            (!document.getElementById('detailPenghargaan').checked) ? $('#deskPenghargaan').show() : $('#deskPenghargaan').hide();
+            (!document.getElementById('detailOrganisasi').checked) ? $('#deskOrganisasi').show() : $('#deskOrganisasi').hide();
+            (!document.getElementById('detailCltn').checked) ? $('#deskCltn').show() : $('#deskCltn').hide();
         })
         .fail(function () {
             alert("Terjadi kesalahan saat memuat data");
